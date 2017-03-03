@@ -1,0 +1,26 @@
+version: "2"
+services:
+
+  ## Example with raw Flask
+  flask:
+    restart: always
+    build: restService/
+    image: kungalex/flask
+
+    environment:
+      DEBUG: "true"
+
+    ports:
+      - "8000:8000"
+
+
+    volumes:
+      - ./restService/src:/usr/src/app:rw
+
+    command: ./startScript.sh
+
+
+
+
+
+
